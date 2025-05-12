@@ -6,44 +6,47 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Jesus Recreation Church</title>
   <link rel="stylesheet" href="style.css" />
-  <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      rel="stylesheet"
-    />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
   <link rel="manifest" href="manifest.json" />
 </head>
 <body>
-
-  <!-- Static Navbar -->
+  <script src="script.js"></script>
+  <!-- Navbar -->
   <header class="header static-nav">
     <div class="container">
       <div class="logo">JRC</div>
       <nav class="nav">
         <ul class="nav-menu">
-          <li class="nav-card"><a href="#home"><i class="fa fa-home"><span>Home</span></i></a></li>
-          <li class="nav-card"><a href="#about"><i class="fa fa-user"><span>About</span></i></a></li>
-          <li class="nav-card"><a href="#ministries"><i class="fa fa-hand-holding-heart"><span>Ministries</span></i></a></li>
-          <li class="nav-card"><a href="#events"><i class="fa fa-calendar-alt"><span>Events</span></i></a></li>
-          <li class="nav-card"><a href="#sermons"><i class="fa fa-book-open"><span>Sermons</span></i></a></li>
-          <li class="nav-card"><a href="#donate"><i class="fa fa-donate"><span>Donate</span></i></a></li>
-          <li class="nav-card"><a href="#contact"><i class="fa fa-envelope"><span>Contact</span></i></a></li>          
+          <li class="nav-card"><a href="#home"><i class="fa fa-home"></i> Home</a></li>
+          <li class="nav-card"><a href="#about"><i class="fa fa-user"></i> About</a></li>
+          <li class="nav-card"><a href="#ministries"><i class="fa fa-hand-holding-heart"></i> Ministries</a></li>
+          <li class="nav-card">
+            <a href="#events" class="events-link">
+              <i class="fa fa-calendar-alt"></i> Events
+              <span class="event-alert"></span>
+            </a>
+          </li>
+          <li class="nav-card"><a href="#sermons"><i class="fa fa-book-open"></i> Sermons</a></li>
+          <li class="nav-card"><a href="#donate"><i class="fa fa-donate"></i> Donate</a></li>
+          <li class="nav-card"><a href="#contact"><i class="fa fa-envelope"></i> Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="hero-overlay">
       <div class="hero-text">
         <h1>Welcome to Jesus Recreation Church</h1>
-        <p>Empowered by Faith. United in Love. Guided by Hope.</p><br><br>
+        <p>Empowered by Faith. United in Love. Guided by Hope.</p>
+        <br><br>
         <a href="#events" class="btn">Join Us This Sunday</a>
       </div>
     </div>
   </section>
 
-  <!-- About -->
+  <!-- About Section -->
   <section class="section about" id="about">
     <div class="container">
       <h2 class="section-title">Who We Are</h2>
@@ -53,61 +56,143 @@
     </div>
   </section>
 
-  <!-- Ministries -->
+  <!-- Ministries Section -->
   <section class="section ministries" id="ministries">
     <div class="container">
       <h2 class="section-title">Our Ministries</h2>
       <div class="ministry-grid">
-        <div class="ministry-card">Youth Ministry</div>
-        <div class="ministry-card">Worship & Music</div>
-        <div class="ministry-card">Children’s Church</div>
-        <div class="ministry-card">Women’s Fellowship</div>
-        <div class="ministry-card">Men’s Fellowship</div>
-        <div class="ministry-card">Outreach & Evangelism</div>
-        <div class="ministry-card">Prayer & Intercession</div>
+
+        <!-- Ministry Template -->
+        <!-- Repeat this card structure for each ministry -->
+
+        <div class="ministry-card" data-video-id="YOUTH_VIDEO_ID">
+          <h3>Youth Ministry</h3>
+          <p>Empowering the next generation in faith and purpose.</p>
+          <div class="card-actions">
+            <button class="btn like-btn" onclick="likeMinistry(this)">👍 Like <span class="like-count">0</span></button>
+            <button class="btn share-btn" onclick="shareMinistry('Youth Ministry')">🔗 Share</button>
+          </div>
+          <a href="https://www.youtube.com/watch?v=YOUTH_VIDEO_ID" target="_blank" class="youtube-link">▶ Watch on YouTube</a>
+          <p class="view-count">Views: <span class="views">Loading...</span></p>
+        </div>
+
+        <div class="ministry-card" data-video-id="WORSHIP_VIDEO_ID">
+          <h3>Worship & Music</h3>
+          <p>Uplifting hearts through praise and worship.</p>
+          <div class="card-actions">
+            <button class="btn like-btn" onclick="likeMinistry(this)">👍 Like <span class="like-count">0</span></button>
+            <button class="btn share-btn" onclick="shareMinistry('Worship & Music')">🔗 Share</button>
+          </div>
+          <a href="https://www.youtube.com/watch?v=WORSHIP_VIDEO_ID" target="_blank" class="youtube-link">▶ Watch on YouTube</a>
+          <p class="view-count">Views: <span class="views">Loading...</span></p>
+        </div>
+
+        <div class="ministry-card" data-video-id="CHILDREN_VIDEO_ID">
+          <h3>Children’s Church</h3>
+          <p>Teaching kids about God's love in fun, creative ways.</p>
+          <div class="card-actions">
+            <button class="btn like-btn" onclick="likeMinistry(this)">👍 Like <span class="like-count">0</span></button>
+            <button class="btn share-btn" onclick="shareMinistry('Children’s Church')">🔗 Share</button>
+          </div>
+          <a href="https://www.youtube.com/watch?v=CHILDREN_VIDEO_ID" target="_blank" class="youtube-link">▶ Watch on YouTube</a>
+          <p class="view-count">Views: <span class="views">Loading...</span></p>
+        </div>
+
+        <div class="ministry-card" data-video-id="WOMEN_VIDEO_ID">
+          <h3>Women’s Fellowship</h3>
+          <p>Fostering spiritual growth among women through connection and care.</p>
+          <div class="card-actions">
+            <button class="btn like-btn" onclick="likeMinistry(this)">👍 Like <span class="like-count">0</span></button>
+            <button class="btn share-btn" onclick="shareMinistry('Women’s Fellowship')">🔗 Share</button>
+          </div>
+          <a href="https://www.youtube.com/watch?v=WOMEN_VIDEO_ID" target="_blank" class="youtube-link">▶ Watch on YouTube</a>
+          <p class="view-count">Views: <span class="views">Loading...</span></p>
+        </div>
+
+        <div class="ministry-card" data-video-id="MEN_VIDEO_ID">
+          <h3>Men’s Fellowship</h3>
+          <p>Equipping men to lead with integrity and faith.</p>
+          <div class="card-actions">
+            <button class="btn like-btn" onclick="likeMinistry(this)">👍 Like <span class="like-count">0</span></button>
+            <button class="btn share-btn" onclick="shareMinistry('Men’s Fellowship')">🔗 Share</button>
+          </div>
+          <a href="https://www.youtube.com/watch?v=MEN_VIDEO_ID" target="_blank" class="youtube-link">▶ Watch on YouTube</a>
+          <p class="view-count">Views: <span class="views">Loading...</span></p>
+        </div>
+
+        <div class="ministry-card" data-video-id="OUTREACH_VIDEO_ID">
+          <h3>Outreach & Evangelism</h3>
+          <p>Sharing the good news of Jesus Christ beyond the walls.</p>
+          <div class="card-actions">
+            <button class="btn like-btn" onclick="likeMinistry(this)">👍 Like <span class="like-count">0</span></button>
+            <button class="btn share-btn" onclick="shareMinistry('Outreach & Evangelism')">🔗 Share</button>
+          </div>
+          <a href="https://www.youtube.com/watch?v=OUTREACH_VIDEO_ID" target="_blank" class="youtube-link">▶ Watch on YouTube</a>
+          <p class="view-count">Views: <span class="views">Loading...</span></p>
+        </div>
+
+        <div class="ministry-card" data-video-id="PRAYER_VIDEO_ID">
+          <h3>Prayer & Intercession</h3>
+          <p>Standing in the gap through fervent prayer and spiritual warfare.</p>
+          <div class="card-actions">
+            <button class="btn like-btn" onclick="likeMinistry(this)">👍 Like <span class="like-count">0</span></button>
+            <button class="btn share-btn" onclick="shareMinistry('Prayer & Intercession')">🔗 Share</button>
+          </div>
+          <a href="https://www.youtube.com/watch?v=PRAYER_VIDEO_ID" target="_blank" class="youtube-link">▶ Watch on YouTube</a>
+          <p class="view-count">Views: <span class="views">Loading...</span></p>
+        </div>
       </div>
     </div>
   </section>
-
-  <!-- Events -->
+  <!-- Events Section -->
   <section class="section events" id="events">
     <div class="container">
       <h2 class="section-title">Upcoming Events</h2>
       <div class="event-grid">
         <div class="event-card">
-          <h3>Sunday Service</h3>
-          <p>Every Sunday • 10:00 AM</p>
+          <h3>Sunday Services</h3>
+          <p>Morning Glory • 6AM-8AM</p>
+          <p>Main service • 9:30 AM-10:00AM</p>
+          <p>Main service • 10:00 AM</p>
         </div>
         <div class="event-card">
-          <h3>cruced</h3>
-          <p>April 24 - 27 • Njiru Fields</p>
+          <h3>Fasting and prayer</h3>
+          <p>may 28 - 30 • In Church</p><br>
+          <p>Wecome all and let us talk to our God he knows as and loves as <br> According to the book of Matthew 17:21 (NKJV):<br>
+            "However, this kind does not go out except by prayer and fasting."
+            </p>
         </div>
         <div class="event-card">
-          <h3>Monthly Prayer Night</h3>
-          <p>Last Friday • 7:00 PM - Midnight</p>
+          <h3>Youth Meeting</h3>
+          <p> On Saturday • on 17th 2pm-4pm<br> Welcome all we discouse on our own stregth as youth to aquire the spiritual maturity</p><br>
+          <p> 1 John 2:13–14: (NKJV):</p>
+        </div>
+        <div class="event-card">
+          <h3>Men confrence </h3>
+          <p>date are to be communicated</p><br>
+          <p>Will be held at Makweni county
+            </p>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Sermon Player -->
+  <!-- Sermons -->
   <section class="section" id="sermons">
     <div class="container">
       <h2 class="section-title">Latest Sermon</h2>
       <video controls width="100%">
-        <source src="assets/sermons/sample-sermon.mp4" type="video/mp4">
+        <source src="src\Blood, Sweat _ Tears to Salvation _ Billy Graham Classic Sermon.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
       <audio controls style="margin-top: 1rem;">
-        <source src="assets/sermons/sample-sermon.mp3" type="audio/mpeg">
+        <source src="src\Blood, Sweat _ Tears to Salvation _ Billy Graham Classic Sermon.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
     </div>
   </section>
-
-  <!-- Donation Form -->
+  <!-- Donation Section -->
   <section class="section" id="donate">
-    <div class="container">
+    <div class="ministry-card">
       <h2 class="section-title">Support Our Ministry</h2>
       <form action="https://example.com/mpesa-donate" method="POST" class="donation-form">
         <label for="name">Name</label>
@@ -119,47 +204,132 @@
         <label for="amount">Amount (KES)</label>
         <input type="number" id="amount" name="amount" required />
 
-        <button type="submit" class="btn">Donate via M-Pesa</button>
+        <button type="submit" class="btn">Donate Now</button>
       </form>
     </div>
   </section>
-
   <!-- Contact Form -->
-  <section class="section" id="contact">
-    <div class="container">
-      <h2 class="section-title">Contact Us</h2>
-      <form id="contactForm">
-        <input type="text" placeholder="Full Name" id="fullname" required />
-        <input type="email" placeholder="Email Address" id="email" required />
-        <textarea id="message" rows="5" placeholder="Your Message..." required></textarea>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
+  <div class="contact-form">
+    <h3>Get in Touch</h3>
+    <form id="contact-form">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" required />
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </div>
+</div>
+</section>
+
+
+      <!-- Social Media Links -->
+      <div class="social-links">
+        <h3>Follow Me</h3>
+        <ul>
+          <li>
+            <a href="https://www.linkedin.com/in/pusaren" target="_blank"
+              ><i class="fab fa-linkedin-in"></i>LinkedIn</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/pusaren" target="_blank"><i class="fab fa-github"></i>GitHub</a>
+          </li>
+          <li>
+            <a href="https://twitter.com/pusaren" target="_blank"><i class="fab fa-twitter"></i>Twitter</a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/pusaren" target="_blank"
+              ><i class="fab fa-instagram"></i>Instagram</a>
+              </li>
+              <li>
+                <a href="tel:+254729639619" class="call-link">
+                  <i class="fas fa-phone"></i> Call Me</a>  
+              </li>
+              <li>
+                <a href="https://wa.me/254729639619" target="_blank" class="whatsapp-link">
+                  <i class="fab fa-whatsapp"></i> WhatsApp Me
+                </a>
+              </li>
+        </ul>
+      </div>
     </div>
   </section>
+  <!-- Chatbot Button -->
+  <div class="chatbot-btn">
+    <button id="chatbot-btn" onclick="toggleChatbot()">💬</button>
+  </div>
 
+  <!-- Chatbot Window -->
+  <div id="chatbot" class="chatbot-window">
+    <div class="chatbot-header">
+      <h4>Chat with Us!</h4>
+      <button onclick="toggleChatbot()">X</button>
+    </div>
+    <div class="chatbot-body">
+      <div class="messages">
+        <!-- Chat messages will appear here -->
+      </div>
+      <textarea
+        id="chat-input"
+        placeholder="Type a message..."
+        rows="3"
+      ></textarea>
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 Jesus Recreation Church | All rights reserved</p>
-      <p>📧 info@jrcnjiruchurch.org | 📞 +254 729639619</p>
+  <footer>
+    <div class="footer-section">
+      <nav>
+        <ul>
+          <li class="nav-card"><a href="#home"><i class="fa fa-home"></i> Home</a></li>
+          <li class="nav-card"><a href="#about"><i class="fa fa-user"></i> About</a></li>
+          <li class="nav-card"><a href="#ministries"><i class="fa fa-hand-holding-heart"></i> Ministries</a></li>
+          <li class="nav-card"><a href="#events"><i class="fa fa-calendar-alt"></i> Events</a></li>
+          <li class="nav-card"><a href="#sermons"><i class="fa fa-book-open"></i> Sermons</a></li>
+          <li class="nav-card"><a href="#donate"><i class="fa fa-donate"></i> Donate</a></li>
+          <li class="nav-card"><a href="#contact"><i class="fa fa-envelope"></i> Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-section contact-info">
+      <p>Contact us at:</p>
+      <a href="mailto:pusarenpeter@gmail.com">pusarenpeter@gmail.com</a><br />
+      <a href="tel:+254111772865">+254111772865</a>
+    </div>
+
+    <div class="footer-section social-media">
+      <div class="social-icons-label">Follow us:</div>
+      <a href="https://facebook.com" target="_blank" class="social-icon"
+        ><i class="fab fa-facebook-f"></i><span>Facebook</span></a
+      >
+      <a href="https://twitter.com" target="_blank" class="social-icon"
+        ><i class="fab fa-twitter"></i><span>Twitter</span></a
+      >
+      <a href="https://instagram.com" target="_blank" class="social-icon"
+        ><i class="fab fa-instagram"></i><span>Instagram</span></a
+      >
+      <a href="https://linkedin.com" target="_blank" class="social-icon"
+        ><i class="fab fa-linkedin-in"></i><span>linked-in</span></a
+      >
+      <a href="https://github.com/pusaren" target="_blank" class="social-icon"
+        ><i class="fab fa-github"></i><span>Github</span></a
+      >
     </div>
   </footer>
-
-  <script src="script.js"></script>
-  <script>
-    // Firebase Contact Form Submission (example only)
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      alert('Your message has been sent successfully.');
-      // Firebase or EmailJS logic would go here
-    });
-
-    // PWA Service Worker Registration
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js')
-        .then(reg => console.log('Service Worker registered:', reg))
-        .catch(err => console.error('Service Worker registration failed:', err));
-    }
-  </script>
 </body>
 </html>

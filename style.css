@@ -1,197 +1,693 @@
-/* Reset & Base */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f4f6f9;
+  background: #2c2aa5;
   color: #333;
   line-height: 1.6;
 }
+
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
+
 ul {
   list-style: none;
 }
 
-/* Container */
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 1rem;
-}
-
-/* Navbar */
+/* Header and Navbar */
 .header {
-  position: fixed;
+  background: #2c3e50;
+  padding: 1rem 0;
+  position: sticky;
   top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #333;
-  color: white;
   z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
+  width: 100%;
 }
 
 .header .container {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1140px;
+  margin: auto;
+  padding: 0 20px;
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: bold;
   color: #fff;
-}
-
-.nav {
-  display: flex;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .nav-menu {
-  list-style: none;
   display: flex;
-  gap: 20px;
-}
-
-.nav-card {
-  display: inline-block;
+  gap: 1.2rem;
 }
 
 .nav-card a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  padding: 10px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-.nav-card a:hover {
-  background-color: #555;
+  color: #ecf0f1;
+  font-weight: 500;
+  transition: 0.3s ease;
 }
 
-/* Hero */
+.nav-card a:hover {
+  color: #f39c12;
+}
+.event-alert {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  margin-left: 5px;
+  vertical-align: middle;
+  animation: pulse 1.5s infinite;
+}
+
+/* Optional: pulsating effect */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+}
+
+/* Hero Section */
 .hero {
-  background: url('assets/church-bg.jpg') center/cover no-repeat;
-  color: white;
-  height: 70vh;
-  position: relative;
+  height: 100vh;
+  background-color: #2c2aa5;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.hero-overlay {
-  background-color: rgba(0, 0, 0, 0.6);
-  width: 100%;
-  height: 100%;
-  padding: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.hero-text {
   text-align: center;
-  animation: fadeIn 1.5s ease;
+  position: relative;
+  color: #fff;
 }
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.65);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .hero-text h1 {
   font-size: 3rem;
-}
-.btn {
-  margin-top: 1rem;
-  background: #1abc9c;
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 8px;
-  transition: background 0.3s ease;
-}
-.btn:hover {
-  background: #16a085;
+  margin-bottom: 0.5rem;
 }
 
-/* Sections */
-.section {
-  padding: 4rem 0;
+.hero-text p {
+  font-size: 1.3rem;
 }
+
+.btn {
+  background: #e67e22;
+  padding: 0.75rem 1.5rem;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #d35400;
+}
+
+/* Section Styling */
+.section {
+  padding: 60px 20px;
+  background: #fff;
+}
+
 .section-title {
-  font-size: 2rem;
   text-align: center;
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
+
 .section-description {
   text-align: center;
-  max-width: 600px;
-  margin: auto;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ministries */
+.ministry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.ministry-card {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.ministry-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.like-btn, .share-btn {
+  background: #2980b9;
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.like-btn:hover, .share-btn:hover {
+  background: #1c5980;
+}
+
+.youtube-link {
+  display: block;
+  margin-top: 0.5rem;
+  color: #c0392b;
+  font-weight: bold;
+}
+
+.view-count {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
   color: #555;
 }
 
-/* Cards */
-.ministry-grid,
+/* Events */
 .event-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  margin-top: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.ministry-card,
+
 .event-card {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.ministry-card:hover,
-.event-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-/* Sermon */
-video,
-audio {
+  background: #ecf0f1;
+  padding: 1rem;
   border-radius: 8px;
-  background: #000;
+  text-align: center;
+  width: 250px;
 }
 
-/* Forms */
-form {
+/* Sermons */
+video, audio {
+  width: 100%;
+  max-width: 800px;
+  display: block;
+  margin: auto;
+}
+
+/* Donation Form */
+.donation-form {
+  max-width: 500px;
+  margin: auto;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-}
-input, textarea {
-  padding: 0.75rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-}
-input:focus, textarea:focus {
-  outline: none;
-  border-color: #1abc9c;
 }
 
-/* Footer */
-.footer {
-  background-color: #2c3e50;
+.donation-form label {
+  margin-top: 1rem;
+}
+
+.donation-form input {
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.donation-form button {
+  margin-top: 1.5rem;
+  background: #27ae60;
+  color: #fff;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.donation-form button:hover {
+  background: #1e8449;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-menu {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+}
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #0f172a;
   color: white;
-  text-align: center;
-  padding: 2rem 0;
-  margin-top: 2rem;
+}
+.footer {
   font-size: 0.9rem;
+  margin-top: 2rem;
+  color: #94a3b8;
+}
+/* Contact Section Styling */
+.contact-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-header h2 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.contact-header p {
+  font-size: 18px;
+  color: #555;
+}
+
+/* Contact Section Styling */
+.contact-section {
+  padding: 60px 20px;
+  background: url("assets/tech-background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-section::before {
+  content: "";
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay to enhance text visibility */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Contact Header Styling */
+.contact-header {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.contact-header h2 {
+  font-size: 36px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.contact-header p {
+  font-size: 18px;
+  color: #ddd;
+}
+
+/* Contact Form Styling */
+.contact-form {
+  background: #16212b;
+  padding: 30px;
+  margin-top: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: slideIn 1s ease-out;
+}
+.contact-form h3 {
+  font-size: 28px;
+  color:wheat;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+.contact-form .form-group {
+  margin-bottom: 15px;
+}
+.contact-form label {
+  display: block;
+  font-size: 16px;
+  color:wheat;
+  margin-bottom: 5px;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #28a745;
+  background-color: rgb(10, 10, 10);
+  outline: none;
+  transform: scale(1.02);
+}
+/* Social Links Styling */
+.social-links {
+  text-align: center;
+  margin-top: 40px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.social-links h3 {
+  font-size: 28px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.social-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.social-links ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.social-links ul li a {
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links ul li a:hover {
+  color: #28a745;
+}
+
+/* Google Map Styling */
+.google-map {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.google-map iframe {
+  width: 100%;
+  max-width: 600px;
+  height: 450px;
+  border: 0;
 }
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
+
+@keyframes slideIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design for Contact Form */
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 20px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 14px;
+  }
+
+  .social-links ul li {
+    margin: 0 10px;
+  }
+}
+/* Chatbot Button Styling */
+.chatbot-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.chatbot-btn button {
+  background-color: #28a745;
+  color: #fff;
+  font-size: 18px;
+  padding: 15px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.chatbot-btn button:hover {
+  background-color: #218838;
+}
+
+/* Chatbot Window Styling */
+.chatbot-window {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: none;
+  flex-direction: column;
+  z-index: 999;
+  animation: slideIn 0.5s ease-out;
+}
+
+.chatbot-header {
+  background-color: #28a745;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.chatbot-header button {
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.chatbot-body {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 50px); /* Adjust for header height */
+}
+
+.messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+/* Chatbot Animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Make the chatbot responsive */
+@media (max-width: 768px) {
+  .chatbot-window {
+    width: 250px;
+    height: 350px;
+  }
+}
+
+/* Footer */
+footer {
+  background-color: #2c3e50;
+  padding: 40px 20px;
+  text-align: center;
+  color: #fff;
+  margin-top: 40px;
+  position: relative;
+}
+
+/* Footer Sections Layout (in Columns) */
+footer .footer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* Footer Navigation (Home, About, etc.) */
+footer .footer-section nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+}
+
+footer .footer-section nav ul li {
+  display: inline-block;
+}
+
+footer .footer-section nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 15px;
+  transition: color 0.3s ease;
+}
+
+footer .footer-section nav ul li a:hover {
+  color: #f39c12;
+}
+
+/* Contact Section */
+footer .footer-section .contact-info a {
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin-bottom: 5px;
+}
+
+footer .footer-section .contact-info a:hover {
+  color: #f39c12;
+}
+
+/* Social Media Section */
+footer .footer-section .social-icons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+footer .footer-section .social-icons a {
+  color: #fff;
+  font-size: 30px;
+  transition: color 0.3s ease;
+}
+
+footer .footer-section .social-icons a:hover {
+  color: #f39c12;
+}
+
+footer .footer-section .social-icons-label {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Large Screens Layout for Footer (Display in Columns) */
+footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+footer .footer-section {
+  width: 30%;
+  text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+  footer .footer-section {
+    width: 100%;
+  }
+}
+
