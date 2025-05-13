@@ -205,21 +205,133 @@ ul {
   color: #555;
 }
 
-/* Events */
+/* Container and Section */
+.section.events {
+  padding: 2rem 1rem;
+  background-color: #f9fafb;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.section-title {
+  text-align: center;
+  color: #1f2937;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Grid Layout */
 .event-grid {
   display: flex;
-  gap: 1.5rem;
   flex-wrap: wrap;
+  gap: 1.5rem;
   justify-content: center;
 }
 
+/* Base Card Styling */
 .event-card {
-  background: #ecf0f1;
-  padding: 1rem;
+  background-color: #ffffff;
+  padding: 1.5rem;
   border-radius: 8px;
-  text-align: center;
-  width: 250px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  width: 300px;
+  font-family: Arial, sans-serif;
 }
+
+.event-card h3 {
+  margin-top: 0;
+}
+
+/* Specific Themes */
+.sunday {
+  border-left: 5px solid #3b82f6;
+}
+
+.sunday h3 {
+  color: #1d4ed8;
+}
+
+.fasting {
+  background-color: #fff7ed;
+  border-left: 5px solid #f97316;
+}
+
+.fasting h3 {
+  color: #c2410c;
+}
+
+.fasting blockquote {
+  color: #92400e;
+  border-left: 4px solid #fdba74;
+  padding-left: 1rem;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+.youth {
+  background-color: #ecfdf5;
+  border-left: 5px solid #10b981;
+}
+
+.youth h3 {
+  color: #047857;
+}
+
+.youth blockquote {
+  color: #065f46;
+  border-left: 4px solid #6ee7b7;
+  padding-left: 1rem;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+.fellowship {
+  background-color: #fef3c7;
+  border-left: 5px solid #f59e0b;
+}
+
+.fellowship h3 {
+  color: #b45309;
+}
+
+.fellowship hr {
+  border-top: 1px dashed #fbbf24;
+  margin: 0.5rem 0;
+}
+
+.fellowship .note {
+  color: #2563eb;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.men {
+  background-color: #f0f9ff;
+  border-left: 5px solid #0ea5e9;
+}
+
+.men h3 {
+  color: #0369a1;
+}
+
+.men blockquote {
+  color: #0c4a6e;
+  border-left: 4px solid #7dd3fc;
+  padding-left: 1rem;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+/* Utilities */
+.event-desc {
+  margin-top: 1rem;
+  color: #1f2937;
+  font-size: 15px;
+}
+
 
 /* Sermons */
 video, audio {

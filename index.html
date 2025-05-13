@@ -145,37 +145,65 @@
     </div>
   </section>
   <!-- Events Section -->
-  <section class="section events" id="events">
-    <div class="container">
-      <h2 class="section-title">Upcoming Events</h2>
-      <div class="event-grid">
-        <div class="event-card">
-          <h3>Sunday Services</h3>
-          <p>Morning Glory • 6AM-8AM</p>
-          <p>Main service • 9:30 AM-10:00AM</p>
-          <p>Main service • 10:00 AM</p>
-        </div>
-        <div class="event-card">
-          <h3>Fasting and prayer</h3>
-          <p>may 28 - 30 • In Church</p><br>
-          <p>Wecome all and let us talk to our God he knows as and loves as <br> According to the book of Matthew 17:21 (NKJV):<br>
-            "However, this kind does not go out except by prayer and fasting."
-            </p>
-        </div>
-        <div class="event-card">
-          <h3>Youth Meeting</h3>
-          <p> On Saturday • on 17th 2pm-4pm<br> Welcome all we discouse on our own stregth as youth to aquire the spiritual maturity</p><br>
-          <p> 1 John 2:13–14: (NKJV):</p>
-        </div>
-        <div class="event-card">
-          <h3>Men confrence </h3>
-          <p>date are to be communicated</p><br>
-          <p>Will be held at Makweni county
-            </p>
-        </div>
+<section class="section events" id="events">
+  <div class="container">
+    <h2 class="section-title">📣 Upcoming Events</h2>
+
+    <div class="event-grid">
+      <!-- Sunday Services -->
+      <div class="event-card sunday">
+        <h3>🙏 Sunday Services</h3>
+        <p><strong>Morning Glory:</strong> 6:00 AM – 8:45 AM</p>
+        <p><strong>Bible Study:</strong> 9:30 AM – 10:00 AM</p>
+        <p><strong>Main Service:</strong> 10:00 AM onwards</p>
+      </div>
+
+      <!-- Fasting and Prayer -->
+      <div class="event-card fasting">
+        <h3>⛪ Fasting & Prayer</h3>
+        <p><strong>Date:</strong> May 28 – 30 • In Church</p>
+        <p class="event-desc">Welcome all as we seek God together in unity and faith.</p>
+        <blockquote>
+          📖 <strong>Matthew 17:21 (NKJV):</strong><br>
+          “However, this kind does not go out except by prayer and fasting.”
+        </blockquote>
+      </div>
+
+      <!-- Youth Meeting -->
+      <div class="event-card youth">
+        <h3>🧒 Youth Meeting</h3>
+        <p><strong>Date:</strong> Saturday, 17th • 2:00 PM – 4:00 PM</p>
+        <p class="event-desc">Come and grow spiritually with us. We’ll explore our strength and purpose as young believers.</p>
+        <blockquote>
+          📖 <strong>1 John 2:13–14 (NKJV):</strong><br>
+          “I write to you, young men, because you are strong, and the word of God abides in you...”
+        </blockquote>
+      </div>
+
+      <!-- Fellowship Days -->
+      <div class="event-card fellowship">
+        <h3>📅 Fellowship Days: Wednesday & Friday</h3>
+        <p><strong>⏰ Time:</strong> 5:30 PM – 8:00 PM</p>
+        <p><strong>📍 Location:</strong> Jesus Recreation Church Njiru</p>
+        <hr>
+        <p class="event-desc">Welcome all! Let us come together and talk to our God—He knows us, loves us, and answers when we seek Him in truth and unity.</p>
+        <p class="note">Let’s meet, pray, and grow together. You are warmly invited!</p>
+      </div>
+
+      <!-- Men's Conference -->
+      <div class="event-card men">
+        <h3>👨 Men's Conference</h3>
+        <p><strong>Date:</strong> To be communicated</p>
+        <p><strong>Location:</strong> Makueni County</p>
+        <p class="event-desc">This is a special time for men to grow in leadership, faith, and responsibility through the Word of God and fellowship.</p>
+        <blockquote>
+          📖 <strong>1 Corinthians 16:13 (NKJV):</strong><br>
+          “Watch, stand fast in the faith, be brave, be strong.”
+        </blockquote>
       </div>
     </div>
-  </section>
+  </div>
+</section>
   <!-- Sermons -->
   <section class="section" id="sermons">
     <div class="container">
@@ -194,7 +222,7 @@
   <section class="section" id="donate">
     <div class="ministry-card">
       <h2 class="section-title">Support Our Ministry</h2>
-      <form action="https://example.com/mpesa-donate" method="POST" class="donation-form">
+      <form action="https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest" method="POST" class="donation-form">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required />
 
@@ -298,7 +326,12 @@
           <li class="nav-card"><a href="#home"><i class="fa fa-home"></i> Home</a></li>
           <li class="nav-card"><a href="#about"><i class="fa fa-user"></i> About</a></li>
           <li class="nav-card"><a href="#ministries"><i class="fa fa-hand-holding-heart"></i> Ministries</a></li>
-          <li class="nav-card"><a href="#events"><i class="fa fa-calendar-alt"></i> Events</a></li>
+          <li class="nav-card">
+            <a href="#events" class="events-link">
+              <i class="fa fa-calendar-alt"></i> Events
+              <span class="event-alert"></span>
+            </a>
+          </li>
           <li class="nav-card"><a href="#sermons"><i class="fa fa-book-open"></i> Sermons</a></li>
           <li class="nav-card"><a href="#donate"><i class="fa fa-donate"></i> Donate</a></li>
           <li class="nav-card"><a href="#contact"><i class="fa fa-envelope"></i> Contact</a></li>
